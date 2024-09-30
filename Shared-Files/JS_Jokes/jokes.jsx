@@ -1,4 +1,4 @@
-const jokesArray = [
+const jokes = [
   {
     joke: "Why did the JavaScript developer quit his job? Because he didn't get arrays!",
     likes: 0,
