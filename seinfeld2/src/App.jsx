@@ -1,3 +1,5 @@
+import Season from "./components/Season";
+
 const App = () => {
   const seinfeldShow = {
     id: 1,
@@ -33,17 +35,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>{seinfeldShow.title}</h1>
-      {seinfeldShow.episodes.map((episode) => (
-        <p key={episode.id}>
-          {episode.title} - Views: {episode.views}
-        </p>
-      ))}
-      Total Views:{" "}
-      {seinfeldShow.episodes.reduce(
-        (prevVal, episode) => prevVal + episode.views,
-        0
-      )}
+      <Season season={seinfeldShow} />
     </div>
   );
 };
