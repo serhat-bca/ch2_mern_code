@@ -5,6 +5,11 @@ import { useState } from "react";
 const App = ({ movies }) => {
   const [movieList, setMovieList] = useState(movies);
   const [movieName, setMovieName] = useState("");
+  const [showAll, setShowAll] = useState(true);
+
+  const filteredList = showAll
+    ? movieList
+    : movieList.filter((m) => m.watchList);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,8 +37,11 @@ const App = ({ movies }) => {
         <input value={movieName} onChange={handleChange} />
         <button type="submit">Add Movie</button>
       </form>
-      <h2>Movie List</h2>
-      {movieList.map((movie) => {
+      <button onClick={() => setShowAll(!showAll)}>
+        {showAll ? "Show Watchlist Only" : "Show All Movies"}
+      </button>
+      {showAll ? <h2>All Movies</h2> : <h2>Your Watchlist</h2>}
+      {filteredList.map((movie) => {
         return <Movie key={movie.id} movie={movie} />;
       })}
     </div>
