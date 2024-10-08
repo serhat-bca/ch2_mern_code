@@ -8,12 +8,20 @@ const App = ({ movies }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Button Clicked.");
+    const newMovieObj = {
+      id: Date.now(),
+      title: movieName,
+      watchList: false,
+    };
+    // setMovieList([...movieList, newMovieObj]);
+    setMovieList(movieList.concat(newMovieObj));
+    setMovieName("");
+    // console.log("New Object: ", newMovieObj);
   };
 
   const handleChange = (e) => {
     setMovieName(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   return (
