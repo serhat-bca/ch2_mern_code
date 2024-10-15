@@ -20,12 +20,14 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newMovieObj = {
-      id: Date.now(),
       title: movieName,
       watchList: false,
     };
+    axios.post("http://localhost:3001/movies", newMovieObj).then((res) => {
+      setMovies(movies.concat(res.data));
+    });
     // setMovieList([...movieList, newMovieObj]);
-    setMovies(movies.concat(newMovieObj));
+    // setMovies(movies.concat(newMovieObj));
     setMovieName("");
     // console.log("New Object: ", newMovieObj);
   };

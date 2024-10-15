@@ -1,28 +1,33 @@
 {
-    "movies": [
-      {
-        "id": 1,
-        "title": "The Shawshank Redemption",
-        "year": 1994,
-        "watchList": true
-      },
-      {
-        "id": 2,
-        "title": "The Godfather",
-        "year": 1972,
-        "watchList": true
-      },
-      {
-        "id": 3,
-        "title": "Pulp Fiction",
-        "year": 1994,
-        "watchList": false
-      },
-      {
-        "id": 4,
-        "title": "The Dark Knight",
-        "year": 2008,
-        "watchList": false
-      }
-    ]
-  }
+  "movies": [
+    {
+      "id": "1",
+      "title": "The Shawshank Redemption",
+      "year": 1994,
+      "watchList": true
+    },
+    {
+      "id": "2",
+      "title": "The Godfather",
+      "year": 1972,
+      "watchList": true
+    },
+    {
+      "id": "3",
+      "title": "Pulp Fiction",
+      "year": 1994,
+      "watchList": false
+    },
+    {
+      "id": "4",
+      "title": "The Dark Knight",
+      "year": 2008,
+      "watchList": false
+    },
+    {
+      "id": "1549",
+      "title": "what",
+      "watchList": false
+    }
+  ]
+}
