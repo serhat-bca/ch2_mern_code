@@ -1,3 +1,8 @@
-const Movie = ({ movie }) => <li>{movie.title}</li>;
+const Movie = ({ movie, updateMovie }) => (
+  <li>
+    {movie.title} {movie?.year && `(${movie.year})`}
+    <button onClick={()=>updateMovie(movie)}>{movie.watchList ? "Remove" : "Add"}</button>
+  </li>
+);
 
 export default Movie;
