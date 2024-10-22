@@ -27,9 +27,12 @@ const App = () => {
       watchList: false,
       year: releaseYear,
     };
-    axios.post("http://localhost:3001/movies", newMovieObj).then((res) => {
-      setMovies(movies.concat(res.data));
+    movieService.addMovie(newMovieObj).then((data) => {
+      setMovies(movies.concat(data));
     });
+    // axios.post("http://localhost:3001/movies", newMovieObj).then((res) => {
+    //   setMovies(movies.concat(res.data));
+    // });
     // setMovieList([...movieList, newMovieObj]);
     // setMovies(movies.concat(newMovieObj));
     setMovieName("");
@@ -39,11 +42,14 @@ const App = () => {
 
   const updateMovie = (movie) => {
     const updatedMovie = { ...movie, watchList: !movie.watchList };
-    axios
-      .put(`http://localhost:3001/movies/${movie.id}`, updatedMovie)
-      .then((res) =>
-        setMovies(movies.map((m) => (m.id !== res.data.id ? m : res.data)))
-      );
+    // axios
+    //   .put(`http://localhost:3001/movies/${movie.id}`, updatedMovie)
+    //   .then((res) =>
+    //     setMovies(movies.map((m) => (m.id !== res.data.id ? m : res.data)))
+    //   );
+    movieService.updateMovie(updatedMovie).then((data) => {
+      setMovies(movies.map((m) => (m.id !== data.id ? m : data)));
+    });
   };
 
   const handleChange = (e) => {
