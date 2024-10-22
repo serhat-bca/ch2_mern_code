@@ -4,7 +4,7 @@
       "id": "1",
       "title": "The Shawshank Redemption",
       "year": 1994,
-      "watchList": true
+      "watchList": false
     },
     {
       "id": "2",
@@ -37,7 +37,7 @@
     {
       "id": "8023",
       "title": "Who",
-      "watchList": false,
+      "watchList": true,
       "year": "2013"
     },
     {

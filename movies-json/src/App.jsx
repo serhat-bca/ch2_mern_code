@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Movie from "./components/Movie";
+import movieService from "./services/movies";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -13,9 +14,10 @@ const App = () => {
   // console.log(moviesData);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/movies").then((res) => {
-      setMovies(res.data);
-    });
+    // axios.get("http://localhost:3001/movies").then((res) => {
+    //   setMovies(res.data);
+    // });
+    movieService.getMovies().then((data) => setMovies(data));
   }, []);
 
   const handleSubmit = (e) => {
