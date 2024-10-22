@@ -22,35 +22,7 @@
       "id": "4",
       "title": "The Dark Knight",
       "year": 2008,
-      "watchList": false
-    },
-    {
-      "id": "1549",
-      "title": "what",
-      "watchList": false
-    },
-    {
-      "id": "ccc0",
-      "title": "Why",
-      "watchList": false
-    },
-    {
-      "id": "8023",
-      "title": "Who",
-      "watchList": true,
-      "year": "2013"
-    },
-    {
-      "id": "c050",
-      "title": "When",
-      "watchList": false,
-      "year": "2015"
-    },
-    {
-      "id": "62b4",
-      "title": "Where",
-      "watchList": true,
-      "year": "2011"
+      "watchList": true
     }
   ]
 }

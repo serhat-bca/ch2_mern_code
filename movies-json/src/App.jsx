@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import Movie from "./components/Movie";
 import movieService from "./services/movies";
@@ -47,9 +46,16 @@ const App = () => {
     //   .then((res) =>
     //     setMovies(movies.map((m) => (m.id !== res.data.id ? m : res.data)))
     //   );
-    movieService.updateMovie(updatedMovie).then((data) => {
-      setMovies(movies.map((m) => (m.id !== data.id ? m : data)));
-    });
+    movieService
+      .updateMovie(updatedMovie)
+      .then((data) => {
+        setMovies(movies.map((m) => (m.id !== data.id ? m : data)));
+      })
+      .catch((e) => {
+        console.log("Error: ", e);
+        alert(`The movie "${movie.title}" is already removed from the server`);
+        setMovies(movies.filter((m) => m.id !== movie.id));
+      });
   };
 
   const handleChange = (e) => {
