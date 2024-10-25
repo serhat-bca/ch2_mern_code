@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import Movie from "./components/Movie";
 import movieService from "./services/movies";
+import Notification from "./components/Notification";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [movieName, setMovieName] = useState("");
   const [releaseYear, setReleaseYear] = useState("");
   const [showAll, setShowAll] = useState(true);
+  const [notification, setNotification] = useState(null);
 
   const filteredList = showAll ? movies : movies.filter((m) => m.watchList);
   // const moviesData = axios.get("http://localhost:3001/movies");
@@ -53,7 +55,13 @@ const App = () => {
       })
       .catch((e) => {
         console.log("Error: ", e);
-        alert(`The movie "${movie.title}" is already removed from the server`);
+        setNotification(
+          `The movie "${movie.title}" is already removed from the server`
+        );
+        setTimeout(() => {
+          setNotification(null);
+        }, 5000);
+        // alert(`The movie "${movie.title}" is already removed from the server`);
         setMovies(movies.filter((m) => m.id !== movie.id));
       });
   };
@@ -66,6 +74,7 @@ const App = () => {
   return (
     <div>
       <h1>Movies Application</h1>
+      <Notification notification={notification} />
       <h2>Add a New Movie</h2>
       <form onSubmit={handleSubmit}>
         <input
