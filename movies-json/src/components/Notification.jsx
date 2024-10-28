@@ -2,7 +2,7 @@ const Notification = ({ notification }) => {
   if (notification === null) return null;
   return (
     <div>
-      <p>{notification}</p>
+      <p style={{ color: "red" }}>{notification}</p>
     </div>
   );
 };
